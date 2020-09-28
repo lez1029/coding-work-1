@@ -1,0 +1,60 @@
+print("title of program: encouragement bot :)")
+print()
+while True:
+  description = input("could you describe how you feel? (sad/happy/tired/ok/iwannadie)")
+
+  list_of_words = description.split()
+
+  feelings_list = []
+  encouragement_list = []
+  counter = 0
+  
+  for each_word in list_of_words:
+    
+    if each_word == "sad":
+      feelings_list.append("sad")
+      encouragement_list.append(" however, don't forget that stars can't shine without darkness!! this sad period will be over soon and there are many greater things to look forward to")
+      counter += 1
+    if each_word == "happy":
+      feelings_list.append("happy")
+      encouragement_list.append("that's great! continue to be happy and always look at the brighter side of things")
+      counter += 1
+    if each_word == "tired":
+      feelings_list.append("tired")
+      encouragement_list.append("however, you are stronger than you think and you can get through this tough time! don't give up and sleep more then")
+      counter += 1
+    if each_word == "ok":
+      feelings_list.append("ok")
+      encouragement_list.append("ok is fine! but aim to be happy and cheerful like yosabelle *she inserts a cool emoji*")
+      counter += 1
+    if each_word == "iwannadie":
+      feelings_list.append("iwannadie")
+      encouragement_list.append("don't wanna die!! things WILL get better and there are many reasons to be happyyyyyy and not die")
+      counter += 1
+
+
+  if counter == 0:
+    
+      output = "Sorry I don't really understand. Please use different words?"
+
+  elif counter == 1:
+    
+      output = "it seems that you are feeling " + feelings_list[0] + " :) hope you feel better!"  
+
+  else:
+
+    feelings = ""    
+    for i in range(len(feelings_list)-1):
+      feelings += feelings_list[i] + ", "
+    feelings += "and " + feelings_list[-1]
+    
+    encouragement = ""    
+    for j in range(len(encouragement_list)-1):
+      encouragement += encouragement_list[i] + ", "
+    encouragement += "and " + encouragement_list[-1]
+
+    output = "it seems that you are feeling quite " + feelings + ". please always remember "+ encouragement + "! hope you feel better :)"
+
+  print()
+  print(output)
+  print()
